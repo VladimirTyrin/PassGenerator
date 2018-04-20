@@ -11,14 +11,14 @@ namespace PassGenerator
 
         private static T PickRandom<T>(this IReadOnlyList<T> list) => list[Random.Next(list.Count)];
 
-        private static void Main(string[] args)
+        private static void Main()
         {
             var chars = new List<char>();
-            for (var i = 'a'; i < 'z'; ++i)
+            for (var i = 'a'; i <= 'z'; ++i)
                 chars.Add(i);
-            for (var i = 'A'; i < 'Z'; ++i)
+            for (var i = 'A'; i <= 'Z'; ++i)
                 chars.Add(i);
-            for (var i = '0'; i < '9'; ++i)
+            for (var i = '0'; i <= '9'; ++i)
                 chars.Add(i);
 
             var passBuilder = new StringBuilder();
