@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-var passwordLength = args.Length > 1 && int.TryParse(args[1], out var length) && length > 0
+var passwordLength = args.Length > 0 && int.TryParse(args[0], out var length) && length > 0
     ? length
     : 12;
 var random = new Random();
