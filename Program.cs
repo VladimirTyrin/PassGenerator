@@ -1,6 +1,8 @@
 ﻿using System.Text;
 
-const int passwordLength = 12;
+var passwordLength = args.Length > 1 && int.TryParse(args[1], out var length) && length > 0
+    ? length
+    : 12;
 var random = new Random();
 
 var chars = new List<char>();
@@ -16,3 +18,5 @@ for (var i = 0; i < passwordLength; i++)
 {
     passBuilder.Append(chars[random.Next(chars.Count)]);
 }
+
+Console.WriteLine(passBuilder.ToString());
